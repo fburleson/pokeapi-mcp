@@ -1,5 +1,8 @@
 # pokeapi-mcp
 
+A MCP server exposing the pokeapi.
+And a chatbot client using the pokeapi MCP server.
+
 ## Installation
 
 ### Requirements
@@ -8,28 +11,13 @@
 
 ### Install
 
-#### uv
-
 ```bash
-uv add
-```
-
-#### python
-
-```bash
-pip install
+git clone https://github.com/fburleson/pokeapi-mcp.git
 ```
 
 ## Usage
 
-### Requirements
-
 ### Code
 
-```python
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()
+```bash
 ```
