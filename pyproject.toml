@@ -1,0 +1,16 @@
+[project]
+name = "pokeapi-mcp"
+version = "0.1.0.dev1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "conventional-pre-commit>=4.4.0",
+    "pre-commit>=4.6.0",
+    "pyright>=1.1.409",
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+]
