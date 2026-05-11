@@ -6,10 +6,15 @@ import requests
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
+load_dotenv()
+SERVER_PORT: str | None = os.getenv("SERVER_PORT")
+SERVER_HOST: str | None = os.getenv("SERVER_HOST")
+
+
 mcp = FastMCP(
     name="pokeapi",
-    host="0.0.0.0",
-    port=8050,
+    host=SERVER_HOST if SERVER_HOST is not None else "0.0.0.0",
+    port=int(SERVER_PORT) if SERVER_PORT is not None else 8050,
 )
 
 POKEAPI_BASE_URL: str = "https://pokeapi.co/api/v2"
@@ -61,7 +66,6 @@ def get_character_info(name: str) -> str:
 
 
 if __name__ == "__main__":
-    load_dotenv()
     transport: str | None = os.getenv("SERVER_TRANSPORT")
     if transport is None:
         mcp.run(transport="stdio")
