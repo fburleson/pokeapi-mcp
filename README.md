@@ -20,9 +20,13 @@ uv sync --no-dev --frozen
 
 ## Usage
 
-### Server
+### Client
 
-#### Native
+```bash
+fastapi dev ./src/api/main.py
+```
+
+### Server
 
 ```bash
 uv run mcp dev ./src/server/main.py

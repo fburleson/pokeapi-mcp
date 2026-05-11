@@ -1,13 +1,15 @@
 [project]
 name = "pokeapi-mcp"
-version = "0.1.0.dev1"
+version = "0.1.0.dev2"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "dotenv>=0.9.9",
+    "fastapi[standard]>=0.136.1",
     "fastmcp>=3.2.4",
     "mcp[cli]>=1.27.1",
+    "ollama>=0.6.2",
     "requests>=2.33.1",
 ]
 

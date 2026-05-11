@@ -11,3 +11,4 @@ wheels/
 
 .dev/
 .env
+.opencode/plans/
