@@ -8,7 +8,3 @@
 ## References
 
 - **README.md** — project overview, usage, and install instructions.
-
-## Conventions
-
-- **Layout:** PEP 517 `src/` layout — code in `src/pokeapi-mcp/`, not package root.
