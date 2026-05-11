@@ -1,6 +1,6 @@
 # pokeapi-mcp
 
-A MCP server exposing the pokeapi.
+A MCP server exposing the pokeapi.   
 And a chatbot client using the pokeapi MCP server.
 
 ## Installation
@@ -13,11 +13,24 @@ And a chatbot client using the pokeapi MCP server.
 
 ```bash
 git clone https://github.com/fburleson/pokeapi-mcp.git
+pip install uv
+uv sync --no-dev --frozen
 ```
 
 ## Usage
 
-### Code
+### Server
+
+#### Native
 
 ```bash
+uv run mcp dev ./src/server/main.py
+```
+
+#### Docker
+
+```bash
+docker build -f .\src\server\Dockerfile -t pokeapi-mcp .    # Build image
+docker run -p 8050:8050 --name pokeapi-mcp pokeapi-mcp      # Run image
+npx @modelcontextprotocol/inspector                         # Run MCPInspector
 ```
