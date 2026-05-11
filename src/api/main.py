@@ -54,6 +54,20 @@ async def _mcp_session() -> AsyncIterator[ClientSession]:
 
 @app.post("/conversation")
 async def conversation(body: MessageRequest) -> MessageResponse:
+    """Process a user message through Ollama with PokéAPI MCP tools.
+
+    Spawns an MCP client session, lists available tools from the server,
+    and passes them to the Ollama model so it can answer Pokémon-related
+    queries. If the model issues tool calls, they are executed and the
+    results are fed back for a final response.
+
+    Args:
+        body (MessageRequest): JSON body containing the ``message`` field.
+
+    Returns:
+        MessageResponse: The model's text response, either direct or after
+        tool execution.
+    """
     async with _mcp_session() as session:
         tools = (await session.list_tools()).tools
         ollama_tools = [_convert_tool(t) for t in tools]
