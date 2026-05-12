@@ -23,7 +23,7 @@ uv sync --no-dev --frozen
 ### Client
 
 ```bash
-fastapi dev ./src/api/main.py
+fastapi run ./src/api/main.py
 ```
 
 ### Server
